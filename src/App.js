@@ -1,10 +1,9 @@
-// src/App.js
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import ContactListItem from './components/ContactListItem';
 import AddContact from './components/AddContact';
-import EditContact from './components/EditContact'; // Certifique-se de que o caminho está correto
-import RemoveContact from './components/RemoveContact'; // Adicione esta linha
+import EditContact from './components/EditContact';
+import RemoveContact from './components/RemoveContact';
 
 const App = () => {
     const contacts = useSelector(state => state.contacts);
@@ -18,7 +17,7 @@ const App = () => {
             {editContactId ? (
                 <EditContact
                     contact={contactToEdit}
-                    onClose={() => setEditContactId(null)}
+                    onClose={() => setEditContactId(null)} // Passa a função onClose
                 />
             ) : (
                 <div>

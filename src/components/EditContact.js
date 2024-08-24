@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editContact } from '../actions/contactActions';
 
-const EditContact = ({ contact }) => {
+const EditContact = ({ contact, onClose }) => {
   const [name, setName] = useState(contact.name);
   const [email, setEmail] = useState(contact.email);
   const [phone, setPhone] = useState(contact.phone);
@@ -17,6 +17,7 @@ const EditContact = ({ contact }) => {
       phone
     };
     dispatch(editContact(editedContact));
+    onClose(); // Fechar o formulário de edição após salvar
   };
 
   return (
